@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+  {% block content %}
+  <h1>Please answer the following questions. </h1>
+  <br><br>
+    <form action='/response' class = "text">
+      What is your favorite number?<br>
+      <input type="text" name="num">
+      <br><br>
+       What is your favorite food?<br>
+      <input type="text" name="food">
+      <br><br>
+       What is your favorite sport?<br>
+      <input type="text" name="sport">
+      <br><br>
+      <input type="submit" id="check">
+    </form>
+    {% endblock %}
