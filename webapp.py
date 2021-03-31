@@ -8,13 +8,14 @@ app = Flask(__name__)
 def render_main():
 	with open('earthquakes.json') as earthquake_data:
 		locations = json.load(earthquake_data)
-	return render_template('home.html', options = get_location_options(locations))
+	#return render_template('home.html', options = get_location_options(locations))
+	return render_template('home.html')
 
 @app.route("/response")
 def render_response():
-	with open('earthquakes.json') as earthquake_data:
-		locations = json.load(earthquake_data)
-	location = request.args['LocationSelected']
+	#with open('earthquakes.json') as earthquake_data:
+		#locations = json.load(earthquake_data)
+	#location = request.args['LocationSelected']
 	fact1 = 0
 	#for data in location:
 		#if place == data["location"]["name"]:
