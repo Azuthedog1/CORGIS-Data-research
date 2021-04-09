@@ -11,17 +11,30 @@ def render_main():
 	#return render_template('home.html', options = get_location_options(locations))
 	return render_template('home.html')
 
-@app.route("/response")
-def render_response():
-	#with open('earthquakes.json') as earthquake_data:
-		#locations = json.load(earthquake_data)
-	#location = request.args['LocationSelected']
-	fact1 = 0
-	#for data in location:
-		#if place == data["location"]["name"]:
-			#factC = data["Miscellaneous"]["Language Other than English at Home"]
-			#factS = data["State"]
-	return render_template('response.html', response = fact1)
+@app.route("/graph")
+def render_respose():
+	with open('earthquakes.json') as earthquake_data:
+		file = json.load(earthquake_data)
+	earth = {}
+	for x in range(32):
+		earth[x] = 0
+	return render_template('graph.html', dataPoints=total_daily_earthquakes(file))
+
+def total_daily_earthquakes(file):
+	days = {}
+	earth = {}
+	for x in range(1, 32):
+		earth[x] = 0
+	for d in file:
+		day = d["time"]["day"]
+		for y in earth.keys():
+			if day == y:
+				num = earth.get(y)
+				earth[y] = num + 1
+
+	return earth
+
+
 
 
 if __name__=="__main__":

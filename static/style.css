@@ -1,5 +1,10 @@
 body{
-	margin-left: 20px;
 	text-align: center;
 	background: lightgray;
+}
+li a:hover{
+	background-color: #111;
+}
+.content{
+	margin: 50px;
 }
