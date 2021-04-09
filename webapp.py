@@ -31,8 +31,16 @@ def total_daily_earthquakes(file):
 			if day == y:
 				num = earth.get(y)
 				earth[y] = num + 1
-
-	return earth
+	#number_of_earthquakes = []
+	#for w in earth:
+		#if w < 29 and w > 0:
+		#number_of_earthquakes.append(earth.get(w))
+	code = "["
+	for year, gross in earth.items():
+		code = code + Markup("{ x: '" + str(year) + "', y: " + str(earth.get(year)) + " },")
+	code = code[:-1] #remove the last comma
+	code = code + "]"
+	return code
 
 
 

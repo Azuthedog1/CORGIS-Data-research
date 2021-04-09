@@ -1,44 +1,21 @@
 {% extends "layout.html" %}
 {% set active_page = "graph" %}
 	{% block content %}
-    	 <script src="{{url_for('static',filename='canvasChart.js')}}" type="text/javascript"></script>
-    <script type="text/javascript"> 
+    <script src="{{url_for('static',filename='canvasChart.js')}}" type="text/javascript"></script>
+    <script type="text/javascript">
 
-       $(document).ready(function () {
-            /*var data = { title: "Number of Earthquakes Daily",
+        $(document).ready(function () {
+            var dataDef = { title: "Amount of Earthquakes daily over a month",
                             xLabel: 'Day', 
-                            yLabel: 'Number of Earthquakes',
+                            yLabel: 'Amount',
                             labelFont: '19pt Arial', 
                             dataPointFont: '10pt Arial',
                             renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
                             dataPoints: {{ dataPoints }}
                            };
-            CanvasChart.render('canvas', dataDef);*/
-            var chart = new CanvasJS.Chart("chartContainer",{
-            	animationEnabled: true,
-            	title:{
-            		text: "Number of Earthquakes Daily"
-            	},
-            	axisX:{
-            		title: "Day"
-            	},
-            	axisY:{
-            		title: "Amount",
-            		includeZero: true
-            	},
-            	data:[{
-            		type: "line",
-            		name: "Number of Earthquakes",
-            		connectNullData: true,
-            		xValueType: "dateTime",
-            		xValueFormatString: "DD MMM hh:mm TT",
-            		YValueFormatString: "#,##0.##",
-            		dataPoints: [ {{ dataPoints }} ]
-            	}]
-            })
+            CanvasChart.render('canvas', dataDef);
         });
-    </script> 
-    <h1> test </h1>
-	<div id="chartContainer" width="1000" height="600"></div>
-	<h1> test {{dataPoints}} </h1>
+
+    </script>
+	<canvas id="canvas" width="1000" height="600"></canvas>
     {% endblock %}
