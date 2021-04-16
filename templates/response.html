@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 	{% block content %}
-    	<h1>New simple password:</h1>
-    	<h2>{{ response }}</h2>
+		<input type="hidden"  id="my_variable" value="{{ response3 }}">
+		<br>
+    	<h2 id = "less" class="hidden">There was {{ response3 }} earthquake in {{ response2 }} over the 30 day period. </h2>
+    	<h2 id = "more" class="hidden">There were {{ response3 }} earthquakes in {{ response2 }} over the 30 day period. </h2>
     {% endblock %}

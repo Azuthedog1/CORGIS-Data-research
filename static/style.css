@@ -8,3 +8,7 @@ li a:hover{
 .content{
 	margin: 50px;
 }
+
+.hidden{
+	display:none;
+}

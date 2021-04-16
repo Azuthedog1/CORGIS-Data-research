@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% set active_page = "stats" %}
+{%block title%}Earthquakes{%endblock%}
+
+{% block content %}
+<br>
+<form action='/response'>
+  	<label for="states">Choose a place to get earthquake info about:</label>
+  	<select name = "PlaceSelected">
+  		{{ response }}
+  	</select>
+  	<br>
+  	<!-- <label for="states">Choose a time frame:</label>
+  	<select name = "county_name">
+  		{{ county_options }}
+  	</select> 
+  	<br> -->
+  	<input type = "submit" id = "check">
+	</form>
+{% endblock %}

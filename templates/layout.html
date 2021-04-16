@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="../static/myscript.js"></script>
-    <title>{% block title %}{% endblock %}Earthquakes</title>
+    <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -32,7 +32,10 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/graph">Graph</a>
+            <a class="nav-link" href="/graph">Graph of Number of Earthquakes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stats">Earthquake Stats</a>
           </li>
         </ul>
       </div>  

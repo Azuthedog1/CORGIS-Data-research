@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
 {% set active_page = "home" %}
-
+{%block title%}Earthquakes{%endblock%}
 {% block content %}
     <div class="content">
     <h1><br>Interesting facts about Earthquakes:</h1>
-    <h3><br>The average magnitude of an earthquake in California is very small since California is on a fault line. California usually experiences one magnitude 5 or greater yearly. <a href="https://www.conservation.ca.gov/cgs/Pages/Earthquakes/earthquake-catalog.aspx" target="_blank">Source</a><br>The year that has had the most earthquakes so far was 2010. <a href="https://www.usgs.gov/faqs/why-are-we-having-so-many-earthquakes-has-naturally-occurring-earthquake-activity-been#:~:text=The%20year%20with%20the%20largest,and%201988%20only%20had%207" target="_blank">Source</a><br>The average depth of an earthquake is somewhere between the surface (crust) and 500 miles down. <a href="https://www.usgs.gov/faqs/what-depth-do-earthquakes-occur-what-significance-depth?qt-news_science_products=0#qt-news_science_products" target="_blank">Source</a></h3>
+    <h3><br>The json file where I got the data for the other pages is linked <a href="https://think.cs.vt.edu/corgis/json/earthquakes/" target="_blank">here.</a><br>Earthquakes are caused by the movement of tectonic plates on the crust of the Earth. <br>The average magnitude of an earthquake in California is very small since California is on a fault line. California usually experiences one magnitude 5 or greater yearly. <a href="https://www.conservation.ca.gov/cgs/Pages/Earthquakes/earthquake-catalog.aspx" target="_blank">Source</a><br>The year that has had the most earthquakes so far was 2010. <a href="https://www.usgs.gov/faqs/why-are-we-having-so-many-earthquakes-has-naturally-occurring-earthquake-activity-been#:~:text=The%20year%20with%20the%20largest,and%201988%20only%20had%207" target="_blank">Source</a><br>The average depth of an earthquake is somewhere between the surface (crust) and 500 miles down. <a href="https://www.usgs.gov/faqs/what-depth-do-earthquakes-occur-what-significance-depth?qt-news_science_products=0#qt-news_science_products" target="_blank">Source</a></h3>
     </div>
     {% endblock %}

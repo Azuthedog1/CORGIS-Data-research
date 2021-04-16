@@ -20,6 +20,12 @@ def render_respose():
 		earth[x] = 0
 	return render_template('graph.html', dataPoints=total_daily_earthquakes(file))
 
+@app.route("/stats")
+def render_respose1():
+	with open('earthquakes.json') as earthquake_data:
+		locations = json.load(earthquake_data)
+	return render_template('stats.html', response = get_state_options(locations))
+
 def total_daily_earthquakes(file):
 	days = {}
 	earth = {}
@@ -42,8 +48,28 @@ def total_daily_earthquakes(file):
 	code = code + "]"
 	return code
 
+def get_state_options(locations):
+	get_state_options = []
+	for s in locations:
+		if not(s['location']['name']) in get_state_options:
+			get_state_options.append(s['location']['name'])
+	get_state_options.sort()
+	y = ''
+	for x in get_state_options:
+		y = y + Markup("<option value=\"" + x + "\">" + x + "</option>")
+	return y
 
-
+@app.route("/response")
+def render_response():
+	with open('earthquakes.json') as earthquake_data:
+		locations = json.load(earthquake_data)
+	place = request.args['PlaceSelected']
+	fact = place
+	fact1 = 0
+	for data in locations:
+		if place == data["location"]["name"]:
+			fact1 = fact1 + 1
+	return render_template('response.html', response2 = fact, response3 = fact1)
 
 if __name__=="__main__":
     app.run(debug=True, port=54321)

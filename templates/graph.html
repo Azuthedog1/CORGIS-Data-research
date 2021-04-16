@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set active_page = "graph" %}
+{%block title%}Earthquake graph{%endblock%}
 	{% block content %}
     <script src="{{url_for('static',filename='canvasChart.js')}}" type="text/javascript"></script>
     <script type="text/javascript">
@@ -17,5 +18,5 @@
         });
 
     </script>
-	<canvas id="canvas" width="1000" height="600"></canvas>
+	<canvas id="canvas" width="1000" height="600" class = "content"></canvas>
     {% endblock %}

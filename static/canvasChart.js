@@ -76,7 +76,7 @@ var CanvasChart = function () {
 
 				//y axis labels
 				ctx.font = (data.dataPointFont != null) ? data.dataPointFont : '10pt Calibri';
-				var txt = "$" + Math.round(maxYValue - ((i == 0) ? 0 : yPos / ratio));
+				var txt = Math.round(maxYValue - ((i == 0) ? 0 : yPos / ratio));
 				var txtSize = ctx.measureText(txt);
 				ctx.fillText(txt, margin.left - ((txtSize.width >= 14) ? txtSize.width : 10), yPos + 4);
 			}
